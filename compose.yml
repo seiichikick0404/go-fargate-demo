@@ -1,0 +1,13 @@
+services:
+  go:
+    build:
+      context: .
+      dockerfile: ./infra/go/Dockerfile
+    container_name: go-api-server
+    platform: linux/amd64
+    volumes:
+      - ./src:/go-fargate-demo/src
+    ports:
+      - "8080:8080"
+    tty: true
+
